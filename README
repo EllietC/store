@@ -1,0 +1,37 @@
+Store Incident Tracker
+The Store Incident Tracker is a TypeScript program that tracks incidents reported in a store and provides statistics on their status and resolution times.
+
+Installation
+The easiest way to install TypeScript is through npm, the Node.js Package Manager. If you have npm installed, you can install TypeScript globally (-g) on your computer by:
+    npm install -g typescript
+You can test your install by checking the version.
+    tsc --version
+To compile your TypeScript code, you can open the Integrated Terminal (Ctrl+`) and type tsc .\test.ts. This will compile and create a new test.js and incident.js JavaScript file.
+
+If you have Node.js installed, you can run 
+    node test.js
+
+Documentation
+The program consists of the following classes:
+
+Incident
+Represents an incident that has occurred in the store.
+
+Properties:
+description: string - a brief description of the incident.
+status: string - the current status of the incident (either "open" or "solved").
+created: Date - the date and time when the incident was reported.
+resolved: Date - the date and time when the incident was resolved (if applicable).
+
+Store
+Represents a store that tracks incidents and provides statistics on their status and resolution times.
+
+Methods:
+constructor(incidents: Incident[]) - creates a new instance of the Store class with the specified incidents.
+incidentStatus(startDate: Date, endDate: Date): {open: number, solved: number, avgResolutionTime: number, maxResolutionTime: number} - returns an object containing the following statistics for the incidents tracked by the store between the specified start and end dates:
+open: number - the number of incidents that are currently open.
+solved: number - the number of incidents that have been solved.
+avgResolutionTime: number - the average resolution time (in minutes) for the incidents that have been solved.
+maxResolutionTime: number - the maximum resolution time (in minutes) for all incidents (including open incidents, using the current time as the end date).
+Contributing
+If you'd like to contribute to this program, please fork the repository and create a new branch for your changes. Once you've made your changes, submit a pull request and we'll review your changes.
